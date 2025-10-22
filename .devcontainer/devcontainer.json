@@ -22,7 +22,8 @@
         "editor.formatOnSave": true
       },
       "extensions": [
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "ms-vscode.cpptools-extension-pack"
       ]
     }
   }
