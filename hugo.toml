@@ -2,3 +2,36 @@ baseURL = "https://www.yuchigames.com"
 languageCode = "ja-jp"
 title = "備忘録ときどき日記"
 theme = "hugo-theme-stack"
+defaultContentLanguage = "ja"
+
+[params]
+    description = "技術や日常に関する記事を書きます。"
+    mainSections = ["articles"]
+    [params.dateformat]
+        published = "2006/01/02"
+        lastUpdated = "2006/01/02 15:04 JST"
+    [params.sidebar]
+        subtitle = "Hello, world"
+    [params.article]
+        toc = true
+
+[menu]
+[[menu.social]]
+    name = "Twitter"
+    url = "https://x.com/GamesYuchi"
+    identifier = "twitter"
+    [menu.social.params]
+        icon = "brand-twitter"
+        newTab = true
+[[menu.social]]
+    name = "GitHub"
+    url = "https://github.com/YutoMaeda1209"
+    identifier = "github"
+    [menu.social.params]
+        icon = "brand-github"
+        newTab = true
+[[menu.main]]
+    name = "Home"
+    weight = 0
+    [menu.main.params]
+        icon = "home"
