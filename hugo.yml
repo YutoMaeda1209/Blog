@@ -1,0 +1,47 @@
+baseURL: "https://www.yuchigames.com"
+languageCode: "ja-jp"
+title: "備忘録ときどき日記"
+theme: "hugo-theme-stack"
+defaultContentLanguage: "ja"
+params:
+  description: "技術や日常に関する記事を書きます。"
+  mainSections:
+    - "posts"
+  article:
+    toc: true
+  dateformat:
+    published: "2006/01/02"
+    lastUpdated: "2006/01/02 15:04 JST"
+  sidebar:
+    subtitle: "Hello, world"
+  widgets:
+    homepage:
+      - type: "search"
+      - type: "categories"
+      - type: "tag-cloud"
+      - type: "archives"
+    page:
+      - type: "toc"
+
+menu:
+  main:
+    - name: "RSS"
+      url: "/index.xml"
+      weight: 0
+      identifier: "rss"
+      params:
+        - icon: "rss"
+          newTab: true
+  social:
+    - name: "Twitter"
+      url: "https://x.com/GamesYuchi"
+      identifier: "twitter"
+      params:
+        icon: "brand-twitter"
+        newTab: true
+    - name: "GitHub"
+      url: "https://github.com/YutoMaeda1209"
+      identifier: "github"
+      params:
+        icon: "brand-github"
+        newTab: true
