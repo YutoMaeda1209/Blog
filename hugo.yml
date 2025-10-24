@@ -21,7 +21,11 @@ params:
       - type: "tag-cloud"
       - type: "archives"
     page:
+      - type: "search"
       - type: "toc"
+      - type: "categories"
+      - type: "tag-cloud"
+      - type: "archives"
 
 menu:
   main:
