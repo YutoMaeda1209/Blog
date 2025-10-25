@@ -11,18 +11,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
-      - name: Download Theme
-        run: git submodule update --init --recursive
-  connect:
-    name: Connect to server
-    runs-on: ubuntu-latest
-    steps:
-      - name: Connect to Tailscale
-        uses: tailscale/github-action@v4
         with:
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:ci
+          submodules: true
+          fetch-depth: 0
   build:
     name: Build Site
     needs: checkout
@@ -37,9 +28,15 @@ jobs:
         run: hugo --minify
   deploy:
     name: Deploy to Server
-    needs: [connect, build]
+    needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
