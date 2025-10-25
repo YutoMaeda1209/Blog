@@ -1,0 +1,50 @@
+name: Hugo Build and Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  checkout:
+    name: Checkout Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+      - name: Download Theme
+        run: git submodule update --init --recursive
+  connect:
+    name: Connect to server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+  build:
+    name: Build Site
+    needs: checkout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.151.2'
+          extended: true
+      - name: Build Site
+        run: hugo --minify
+  deploy:
+    name: Deploy to Server
+    needs: [connect, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
