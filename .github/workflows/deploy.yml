@@ -5,20 +5,18 @@ on:
       - master
 
 jobs:
-  checkout:
-    name: Checkout Code
+  deploy:
+    name: Deploy to Server
+    needs: build
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
         with:
           submodules: true
           fetch-depth: 0
-  build:
-    name: Build Site
-    needs: checkout
-    runs-on: ubuntu-latest
-    steps:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -26,11 +24,6 @@ jobs:
           extended: true
       - name: Build Site
         run: hugo --minify
-  deploy:
-    name: Deploy to Server
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Connect to Tailscale
         uses: tailscale/github-action@v4
         with:
