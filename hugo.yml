@@ -6,7 +6,7 @@ defaultContentLanguage: "ja"
 params:
   description: "技術や日常に関する記事を書きます。"
   mainSections:
-    - "posts"
+    - "post"
   article:
     toc: true
   dateformat:
