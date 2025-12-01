@@ -1,0 +1,6 @@
+{{- $url := .Get "url" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- if not $url -}}
+{{ errorf "missing value for param 'url': ％s" .Position }}
+{{- end -}}
+<img src="{{ $url }}" alt="{{ $alt }}" />
