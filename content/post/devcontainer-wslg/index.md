@@ -20,6 +20,7 @@ WindowsのDockerはWSL2上で動作しており、WSL2にはWSLgというGUIア�
 ## 注意
 DevContainerを理解していることを前提としている。
 そのため、DevContainerの基本的な説明は省略する。
+また、本稿ではimageに`mcr.microsoft.com/devcontainers/base:debian`を利用している。
 
 ## WSLのアップデート
 まず、WSLを最新バージョンにアップデートする。
@@ -60,3 +61,6 @@ DevContainerを立ち上げて、GUIアプリを実行してみる。
 ## 参考サイト
 - [WSL を使用して Linux GUI アプリを実行する | Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/gui-apps)
 - [【WSL 2】dockerコンテナでGUIアプリを実行してWindowsで表示させたい | DevelopersIO](https://dev.classmethod.jp/articles/wsl2-docker-gui-app-windows-display/)
+
+## 編集履歴
+- 2025-12-04: imageに関する記述を追加
