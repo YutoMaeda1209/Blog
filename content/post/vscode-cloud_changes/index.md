@@ -1,7 +1,7 @@
 ---
 title: "意外と知られてないVSCodeのCloud Changes機能について"
 date: "2026-01-05T04:42:27Z"
-description: "意外と知られていないVSCodeのCloud Changes機能について説明します。"
+description: "コミットせずに作業中の変更を別デバイスで復元して作業を続ける方法を解説。"
 tags:
     - "VSCode"
     - "CloudChanges"
@@ -19,11 +19,15 @@ Gitを使って作業中に、まだコミットはしたくないけど、別�
 1. ユーザーアイコンをクリックし、「Turn on Cloud Changes...」を選択し、Cloud Changes機能を有効にする。
 2. ステージングしていない状態で、F1キーでコマンドパレットを開き、「Cloud Changes: Store Working Changes in Cloud」を選択する。
 
+{{< img url="./img/turn-on-cloud-changes.webp" alt="Cloud Changes機能を有効化する様子" >}}
+{{< img url="./img/vscode-command-pallet.webp" alt="VSCodeでコマンドパレットを開く様子" >}}
+
 ## 使い方（変更のコピー先）
 1. F1キーでコマンドパレットを開き、「Cloud Changes: Show Cloud Changes」を選択する。
 2. 左ペインの上部にあるリロードアイコンをクリックして、クラウド上の変更内容を取得する。
 3. 変更内容一覧に表示されたアイテムにカーソルを合わせて、「Resume Working Changes」をクリックする。
 
-## 参考サイト
+{{< img url="./img/resume-working-changes.webp" alt="Cloud Changesから変更内容を復元する様子" >}}
 
+## 参考サイト
 - [VSCodeの隠し機能Cloud Changesを使って、複数端末で作業を同期する](https://zenn.dev/qrtz/articles/524e1835d4162b)
