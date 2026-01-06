@@ -7,7 +7,7 @@ tags:
     - "CloudChanges"
 categories:
     - "Tips"
-draft: true
+draft: false
 ---
 
 ## 異なるデバイス間での変更の同期
