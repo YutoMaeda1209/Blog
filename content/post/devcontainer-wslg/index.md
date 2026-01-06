@@ -1,7 +1,7 @@
 ---
 title: "DevContainerでGUIアプリ開発（WSLg）"
 date: "2025-11-28T01:55:08Z"
-description: ""
+description: "DevContainerとWSLgを使い、Windows上でLinux GUIアプリを開発する手順を解説。"
 tags:
     - "DevContainer"
     - "WSLg"
