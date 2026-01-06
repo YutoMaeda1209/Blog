@@ -5,7 +5,7 @@ theme: "hugo-theme-stack"
 defaultContentLanguage: "ja"
 params:
   description: "技術や日常に関する記事を書きます。"
-  favicon: img/favicon.ico
+  favicon: favicon.ico
   mainSections:
     - "post"
   article:
