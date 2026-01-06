@@ -6,6 +6,7 @@
   "service": "devcontainer",
   "workspaceFolder": "/workspace",
   "remoteUser": "vscode",
+  "postCreateCommand": "git submodule update --init --recursive",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "upgradePackages": true
