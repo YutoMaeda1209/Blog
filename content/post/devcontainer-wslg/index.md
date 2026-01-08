@@ -58,6 +58,13 @@ services:
 DevContainerを立ち上げて、GUIアプリを実行してみる。
 {{< img url="./img/gui_application.webp" alt="DevContainer上でGUIアプリを実行している様子" >}}
 
+# 追記
+日本語を扱うGUIアプリを動かす場合、フォントが必要になる。
+以下のコマンドでコンテナにGoogle Noto Sans Japaneseフォントをインストールする。
+```bash
+apt install fonts-noto-cjk
+```
+
 ## 参考サイト
 - [WSL を使用して Linux GUI アプリを実行する | Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/gui-apps)
 - [【WSL 2】dockerコンテナでGUIアプリを実行してWindowsで表示させたい | DevelopersIO](https://dev.classmethod.jp/articles/wsl2-docker-gui-app-windows-display/)
