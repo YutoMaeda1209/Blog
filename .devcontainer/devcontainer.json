@@ -15,7 +15,9 @@
     "ghcr.io/devcontainers/features/hugo:1": {
       "version": "0.151.2",
       "extended": true
-    }
+    },
+    "ghcr.io/devcontainers/features/node:2": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
   "customizations": {
     "vscode": {
@@ -24,7 +26,6 @@
       },
       "extensions": [
         "EditorConfig.EditorConfig",
-        "ms-vscode.cpptools-extension-pack"
       ]
     }
   }
